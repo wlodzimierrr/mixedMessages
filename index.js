@@ -5,9 +5,9 @@ function generateRandomNumber(num) {
 
 // storage for messages
 const messageStorage = {
-    advice: [],
-    fortunateOutput:[],
-    whoYouAre:[]
+    whoYouAre:['king', 'clown', 'prince', 'god', 'batman'],
+    advice: ['go out and eat', 'not read this', 'play more', 'trust no one'],
+    fortunateOutput:['terrible luck', 'bad luck', 'ok luck', 'good luck', 'great luck']
 };
 
 // personal message array
@@ -20,16 +20,18 @@ for(let prop in messageStorage) {
 // The first part of a message and the message from the object added to create personal message  
     switch(prop) {
       case 'advice':
-        messageStorage.push(`You should: "${messageStorage[prop][option]}".`)
+        personalMessage.push(`You should: "${messageStorage[prop][option]}".`)
         break
       case 'fortunateOutput':
-        messageStorage.push(`You are having: "${messageStorage[prop][option]}".`)
+        personalMessage.push(`You are having: "${messageStorage[prop][option]}".`)
         break
       case 'whoYouAre':
-        messageStorage.push(`You are: "${messageStorage[prop][option]}".`)
+        personalMessage.push(`You are: "${messageStorage[prop][option]}".`)
         break
       default:
-        messageStorage.push('There is not enough info.')
+        personalMessage.push('There is not enough info.')
         
     };
 };
+
+console.log(personalMessage);
